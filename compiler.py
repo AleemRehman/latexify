@@ -6,6 +6,8 @@ class Compiler:
     # main hook for the compilation of the input, bringing together all other compilation steps
     if self.verbosity:
       return '-'*20+'currently compiling'+'-'*20
+
+    
     return ''
   
   def compare_current_old(self, input):
