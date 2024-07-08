@@ -2,15 +2,15 @@ class Compiler:
   def __init__(self, verbosity):
     self.verbosity = verbosity
 
-  def compile(self, input):
-    # main hook for the compilation of the input, being together all other compilation steps
-
+  def compile(self, input, recompile = False):
+    # main hook for the compilation of the input, bringing together all other compilation steps
     if self.verbosity:
       return '-'*20+'currently compiling'+'-'*20
     return ''
   
   def compare_current_old(self, input):
     # compare the last staged and compiled document to the one with the current changes, only make compile new elements and de-couple elements removed
+
     if self.verbosity:
       return 'comparing old doc to new, only compile new elements of page'
     
