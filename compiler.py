@@ -1,6 +1,17 @@
 class Compiler:
-  def __init__(self, verbosity):
+  def __init__(self, verbosity, options):
     self.verbosity = verbosity
+    self.options = options
+    self.latex_processor = ''
+
+    if self.options['pdf']:
+      self.latex_processor = 'pdflatex'
+    
+    self.output = ''
+    self.glossaries = dict()
+    self.indexer = 0
+    self.bib = ''
+
 
   def compile(self, input, recompile = False):
     # main hook for the compilation of the input, bringing together all other compilation steps
