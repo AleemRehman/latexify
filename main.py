@@ -14,3 +14,5 @@ fs = fh.file_stream_local()
 la = LexicalAnalyser(file_stream=fs, verbosity=True)
 st = la.scan_tex()
 
+for token in st:
+  print("{} - {}".format(token.tag, token.value))

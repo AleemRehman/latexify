@@ -16,7 +16,7 @@ class FileHandler():
 
   def file_stream_local(self):
     if self.tex:
-      tex = open(self.file, "r")
+      tex = open(self.file, "rb")
       assert(tex != None)
       tex.seek(0, 2)
       file_size = tex.tell()
