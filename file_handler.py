@@ -16,7 +16,7 @@ class FileHandler():
 
   def file_stream_local(self):
     if self.tex:
-      tex = open(self.file, "rb")
+      tex = open(self.file, "r")
       assert(tex != None)
       tex.seek(0, 2)
       file_size = tex.tell()
@@ -27,12 +27,3 @@ class FileHandler():
     if self.verbosity:
       print(self.file_stream)
     return self.file_stream
-
-
-
-cwd = os.getcwd()
-file = os.path.join(cwd, 'test_files', 'test.tex')
-
-fh = FileHandler(file=file, options={}, verbosity=True)
-
-fh.file_stream_local()
