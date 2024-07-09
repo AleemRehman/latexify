@@ -1,3 +1,5 @@
 # latexify
 
-Compile Latex documents and generate re-usable components with a click of a button
+Network Traffic Analyzer, light weight personal project
+
+Sniff all web protocols on local network, run basic anomaly detection and plot real-time
