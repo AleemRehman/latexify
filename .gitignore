@@ -163,3 +163,5 @@ cython_debug/
 
 
 REQUIREMENTS.md
+
+test_files/*
