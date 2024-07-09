@@ -16,18 +16,23 @@ class FileHandler():
 
   def file_stream_local(self):
     if self.tex:
-      tex = open(self.file, "r")
-      self.file_stream = tex
-
-      if self.verbosity:
-        print(self.file_stream.read())
+      tex = open(self.file, "rb")
+      assert(tex != None)
+      tex.seek(0, 2)
+      file_size = tex.tell()
+      tex.seek(0)
+      multiBuffer = tex.read(file_size)
+      self.file_stream = multiBuffer
+    
+    if self.verbosity:
+      print(self.file_stream)
     return self.file_stream
 
 
 
-# cwd = os.getcwd()
-# file = os.path.join(cwd, 'test_files', 'test.tex')
+cwd = os.getcwd()
+file = os.path.join(cwd, 'test_files', 'test.tex')
 
-# fh = FileHandler(file=file, options={}, verbosity=True)
+fh = FileHandler(file=file, options={}, verbosity=True)
 
-# fh.file_stream_local()
+fh.file_stream_local()
